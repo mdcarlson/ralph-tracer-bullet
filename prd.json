@@ -1,0 +1,29 @@
+{
+  "title": "Ralph Tracer Bullet",
+  "version": "0.1.0",
+  "status": "draft",
+  "overview": {
+    "description": "A Ralph-loop based project to be used with the Ralph-TUI terminal user interface.",
+    "purpose": "This project won't produce anything real, but will be used as a tracer bullet to ensure that Ralph-TUI and its dependencies are working well."
+  },
+  "goals": [
+    "Validate Ralph-TUI core loop functionality with local task trackers (prd.json, beads)",
+    "Establish baseline for future integrations"
+  ],
+  "future_scope": [
+    "GitHub Issues integration for reading tasks/PRDs",
+    "Other remote task tracker integrations"
+  ],
+  "requirements": {
+    "functional": [],
+    "non_functional": []
+  },
+  "user_stories": [],
+  "constraints": [],
+  "milestones": [],
+  "open_questions": [
+    "What specific features should this tracer bullet project test?",
+    "What dependencies need to be validated?",
+    "What success criteria define 'working well'?"
+  ]
+}

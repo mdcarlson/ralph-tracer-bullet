@@ -78,6 +78,11 @@
         "capability": "Rust / cargo",
         "status": "not_available",
         "notes": "Packages available in apt but not installed. Install with: apt install cargo (v1.75.0)"
+      },
+      {
+        "capability": "Python / pip or uv",
+        "status": "partial",
+        "notes": "Python 3.12.3 installed at /usr/bin/python3. pip not installed but available via: apt install python3-pip (v24.0). uv not installed."
       }
     ],
     "urls": {

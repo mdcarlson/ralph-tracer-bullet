@@ -1,0 +1,10 @@
+# ABOUTME: Ralph-TUI configuration for ralph-tracer-bullet project
+
+[general]
+defaultAgent = "claude"
+defaultTracker = "beads"
+maxIterations = 10
+iterationDelay = 1000
+
+[notifications]
+enabled = false

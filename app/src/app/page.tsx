@@ -11,6 +11,9 @@ export default function Home() {
         <p className="text-xl text-zinc-400">
           Deployment test successful
         </p>
+        <p className="text-lg text-green-400">
+          ✓ Preview deployment working
+        </p>
         <div className="flex flex-col gap-2 text-sm text-zinc-500">
           <p>Next.js + Tailwind + TypeScript</p>
           <p>Deployed to Vercel</p>

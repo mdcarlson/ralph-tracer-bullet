@@ -1,6 +1,6 @@
 {
   "title": "Ralph Tracer Bullet",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "status": "validated",
   "overview": {
     "description": "A Ralph-loop based project to be used with the Ralph-TUI terminal user interface.",
@@ -14,7 +14,7 @@
     "GitHub Issues integration for reading tasks/PRDs",
     "Other remote task tracker integrations",
     "Custom domain configuration",
-    "Beads task tracker integration"
+    "Ralph-TUI full loop execution"
   ],
   "validated": {
     "date": "2026-01-15",
@@ -58,6 +58,11 @@
         "capability": "GitHub secrets management",
         "status": "validated",
         "notes": "gh secret set for VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID"
+      },
+      {
+        "capability": "Beads task tracker",
+        "status": "validated",
+        "notes": "bd init, bd create, bd ready, bd sync, git hooks installed"
       }
     ],
     "urls": {

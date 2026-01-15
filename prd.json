@@ -1,7 +1,7 @@
 {
   "title": "Ralph Tracer Bullet",
-  "version": "0.1.0",
-  "status": "draft",
+  "version": "0.2.0",
+  "status": "validated",
   "overview": {
     "description": "A Ralph-loop based project to be used with the Ralph-TUI terminal user interface.",
     "purpose": "This project won't produce anything real, but will be used as a tracer bullet to ensure that Ralph-TUI and its dependencies are working well."
@@ -13,30 +13,80 @@
   "future_scope": [
     "GitHub Issues integration for reading tasks/PRDs",
     "Other remote task tracker integrations",
-    "GitHub Actions CI/CD pipeline (if custom test/lint steps needed)",
-    "Custom domain configuration"
+    "Custom domain configuration",
+    "Beads task tracker integration"
   ],
-  "deployment": {
-    "strategy": "vercel",
-    "phases": [
+  "validated": {
+    "date": "2026-01-15",
+    "capabilities": [
       {
-        "phase": 1,
-        "name": "Tracer Bullet",
-        "method": "vercel-deploy skill",
-        "description": "Zero-auth claimable deployments for fast iteration",
-        "configuration": "None required"
+        "capability": "gh CLI authentication",
+        "status": "validated",
+        "notes": "OAuth device flow, workflow scope added"
       },
       {
-        "phase": 2,
-        "name": "Persistent Project",
-        "method": "Vercel GitHub Integration",
-        "description": "Connect repo to Vercel for auto-deploy on push",
-        "configuration": "vercel.json in repo root, env vars in Vercel Dashboard"
+        "capability": "git push to GitHub",
+        "status": "validated",
+        "notes": "Required gh auth setup-git for credential helper"
+      },
+      {
+        "capability": "Next.js app scaffolding",
+        "status": "validated",
+        "notes": "create-next-app with TypeScript, Tailwind, App Router"
+      },
+      {
+        "capability": "Vercel CLI deployment",
+        "status": "validated",
+        "notes": "vercel login + vercel deploy"
+      },
+      {
+        "capability": "GitHub Actions CI/CD",
+        "status": "validated",
+        "notes": "Auto-deploy on push to main, preview on PR"
+      },
+      {
+        "capability": "PR preview deployments",
+        "status": "validated",
+        "notes": "Preview URL auto-commented on PR"
+      },
+      {
+        "capability": "Production deployment on merge",
+        "status": "validated",
+        "notes": "Merge to main triggers production deploy"
+      },
+      {
+        "capability": "GitHub secrets management",
+        "status": "validated",
+        "notes": "gh secret set for VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID"
       }
     ],
+    "urls": {
+      "production": "https://app-peach-theta.vercel.app",
+      "github": "https://github.com/mdcarlson/ralph-tracer-bullet",
+      "vercel_dashboard": "https://vercel.com/mark-carlsons-projects-774551d5/app"
+    }
+  },
+  "deployment": {
+    "strategy": "GitHub Actions + Vercel CLI",
+    "workflow": ".github/workflows/deploy.yml",
+    "environments": {
+      "production": {
+        "trigger": "push to main",
+        "url": "https://app-peach-theta.vercel.app"
+      },
+      "preview": {
+        "trigger": "push to non-main branch or PR",
+        "url": "auto-generated per deployment"
+      }
+    },
+    "secrets_required": [
+      "VERCEL_TOKEN",
+      "VERCEL_ORG_ID",
+      "VERCEL_PROJECT_ID"
+    ],
     "configuration_files": {
-      "vercel.json": {
-        "purpose": "Build config, redirects, headers, regions",
+      ".github/workflows/deploy.yml": {
+        "purpose": "CI/CD pipeline for Vercel deployment",
         "gitignore": false
       },
       ".vercel/project.json": {
@@ -108,8 +158,8 @@
   "constraints": [],
   "milestones": [],
   "open_questions": [
-    "What specific features should this tracer bullet project test?",
-    "What dependencies need to be validated?",
-    "What success criteria define 'working well'?"
+    "Should we add beads task tracker integration?",
+    "What additional language runtimes need validation (Python, Go, Rust)?",
+    "Should we test database client connectivity?"
   ]
 }

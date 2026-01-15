@@ -12,10 +12,96 @@
   ],
   "future_scope": [
     "GitHub Issues integration for reading tasks/PRDs",
-    "Other remote task tracker integrations"
+    "Other remote task tracker integrations",
+    "GitHub Actions CI/CD pipeline (if custom test/lint steps needed)",
+    "Custom domain configuration"
   ],
+  "deployment": {
+    "strategy": "vercel",
+    "phases": [
+      {
+        "phase": 1,
+        "name": "Tracer Bullet",
+        "method": "vercel-deploy skill",
+        "description": "Zero-auth claimable deployments for fast iteration",
+        "configuration": "None required"
+      },
+      {
+        "phase": 2,
+        "name": "Persistent Project",
+        "method": "Vercel GitHub Integration",
+        "description": "Connect repo to Vercel for auto-deploy on push",
+        "configuration": "vercel.json in repo root, env vars in Vercel Dashboard"
+      }
+    ],
+    "configuration_files": {
+      "vercel.json": {
+        "purpose": "Build config, redirects, headers, regions",
+        "gitignore": false
+      },
+      ".vercel/project.json": {
+        "purpose": "Local project linking (org/project IDs)",
+        "gitignore": true
+      },
+      ".env.local": {
+        "purpose": "Local dev secrets",
+        "gitignore": true
+      }
+    }
+  },
   "requirements": {
-    "functional": [],
+    "functional": [
+      {
+        "category": "Source Control & Collaboration",
+        "capabilities": [
+          "gh CLI authentication and operations",
+          "git operations (clone, branch, commit, merge, rebase)",
+          "SSH key setup for git"
+        ]
+      },
+      {
+        "category": "Language Runtimes & Package Managers",
+        "capabilities": [
+          "Node.js / npm or pnpm or bun",
+          "Python / pip or uv",
+          "Go / go mod",
+          "Rust / cargo"
+        ]
+      },
+      {
+        "category": "Build & Test",
+        "capabilities": [
+          "Running tests (npm test, pytest, go test, etc.)",
+          "Build commands",
+          "Linters and formatters (eslint, prettier, black, rustfmt)"
+        ]
+      },
+      {
+        "category": "Infrastructure & Deployment",
+        "capabilities": [
+          "docker and docker compose",
+          "Cloud CLIs (aws, gcloud, az)",
+          "kubectl for Kubernetes"
+        ]
+      },
+      {
+        "category": "Development Environment",
+        "capabilities": [
+          "Environment variables / .env file handling",
+          "Secrets management",
+          "Database clients (psql, mysql, redis-cli)"
+        ]
+      },
+      {
+        "category": "Ralph-TUI Core",
+        "capabilities": [
+          "Detecting project type (language, framework)",
+          "Reading/writing structured files (JSON, YAML, TOML)",
+          "Managing bead task format",
+          "Parsing and updating prd.json"
+        ]
+      }
+    ],
     "non_functional": []
   },
   "user_stories": [],

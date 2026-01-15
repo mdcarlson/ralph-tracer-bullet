@@ -68,6 +68,11 @@
         "capability": "Database clients (psql, mysql, redis-cli)",
         "status": "not_available",
         "notes": "Packages available in apt but not installed. Install with: apt install postgresql-client mysql-client redis-tools"
+      },
+      {
+        "capability": "Rust / cargo",
+        "status": "not_available",
+        "notes": "Packages available in apt but not installed. Install with: apt install cargo (v1.75.0)"
       }
     ],
     "urls": {

@@ -70,6 +70,11 @@
         "notes": "Packages available in apt but not installed. Install with: apt install postgresql-client mysql-client redis-tools"
       },
       {
+        "capability": "Go / go mod",
+        "status": "not_available",
+        "notes": "Packages available in apt but not installed. Install with: apt install golang-go (v1.22)"
+      },
+      {
         "capability": "Rust / cargo",
         "status": "not_available",
         "notes": "Packages available in apt but not installed. Install with: apt install cargo (v1.75.0)"

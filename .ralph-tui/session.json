@@ -3,10 +3,10 @@
   "sessionId": "9575e993-df4b-43e5-8fd7-750413acde8b",
   "status": "running",
   "startedAt": "2026-01-15T06:38:03.957Z",
-  "updatedAt": "2026-01-15T06:38:04.424Z",
-  "currentIteration": 0,
+  "updatedAt": "2026-01-15T06:39:15.277Z",
+  "currentIteration": 1,
   "maxIterations": 3,
-  "tasksCompleted": 0,
+  "tasksCompleted": 1,
   "isPaused": false,
   "agentPlugin": "claude",
   "trackerState": {
@@ -22,8 +22,8 @@
       {
         "id": "ralph-tracer-bullet-rce",
         "title": "Validate Rust runtime",
-        "status": "open",
-        "completedInSession": false
+        "status": "completed",
+        "completedInSession": true
       },
       {
         "id": "ralph-tracer-bullet-1q4",
@@ -39,11 +39,22 @@
       }
     ]
   },
-  "iterations": [],
+  "iterations": [
+    {
+      "iteration": 1,
+      "status": "completed",
+      "taskId": "ralph-tracer-bullet-rce",
+      "taskTitle": "Validate Rust runtime",
+      "taskCompleted": true,
+      "durationMs": 69546,
+      "startedAt": "2026-01-15T06:38:04.301Z",
+      "endedAt": "2026-01-15T06:39:13.847Z"
+    }
+  ],
   "skippedTaskIds": [],
   "cwd": "/home/mark/dev/ralph-tracer-bullet",
   "activeTaskIds": [
-    "ralph-tracer-bullet-rce"
+    "ralph-tracer-bullet-1q4"
   ],
   "subagentPanelVisible": false
 }
